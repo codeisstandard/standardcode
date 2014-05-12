@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Standard Code</title>
+        <link rel="shortcut icon" type="image/ico" href="/assets/img/sc_logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        {{ "spin.js" | asset_url | script_tag }}
+        {{ "app.js" | asset_url | script_tag }}
+        <!-- Styles -->
+        {{ "bebas.css" | asset_url | stylesheet_tag }}
+        {{ "icons.css" | asset_url | stylesheet_tag }}
+        {{ "grid.css" | asset_url | stylesheet_tag }}
+        {{ "main.css" | asset_url | stylesheet_tag }}
+    </head>
+    <body>
+
+    <div id="loader"></div>
+
+        <!-- Include -->
+        {% include "header" %}
+        {% block content %}{% endblock %}
+
+        {% block scripts %}{% endblock %}
+
+        <footer>
+            Thank you
+            <a href="/sc_pitchdeck.pdf"><span class="icon-doc"></span></a>
+        </footer>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.icon-left-arrow').on('click', function() {
+                    if($('.one').hasClass('active')){
+                        $('.one').removeClass('active');
+                        $('.three').addClass('active');
+                    } else if($('.two').hasClass('active')){
+                        $('.two').removeClass('active');
+                        $('.one').addClass('active');
+                    } else if($('.three').hasClass('active')){
+                        $('.three').removeClass('active');
+                        $('.two').addClass('active');
+                    }
+                });
+
+                $('.icon-right-arrow').on('click', function() {
+                    if($('.one').hasClass('active')){
+                        $('.one').removeClass('active');
+                        $('.two').addClass('active');
+                    } else if($('.two').hasClass('active')){
+                        $('.two').removeClass('active');
+                        $('.three').addClass('active');
+                    } else if($('.three').hasClass('active')){
+                        $('.three').removeClass('active');
+                        $('.one').addClass('active');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
