@@ -56,6 +56,15 @@ p {
 @media (max-width: 992px) {
   .scroll {
     display: none; } }
+.thanks {
+  background: red;
+  color: #fff;
+  padding: 4px 5px 1px;
+  font-size: 10px;
+  position: absolute;
+  bottom: 10px;
+  right: -5px; }
+
 /*http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_526069a5a3f56_1.JPG*/
 .hero {
   background: red;
@@ -83,10 +92,6 @@ p {
       font-size: 48px; }
     .hero .inner i {
       color: #fff; }
-    .hero .inner .thanks {
-      position: absolute;
-      bottom: 5px;
-      right: 5px; }
 
 @media (max-width: 420px) {
   .hero .inner {
@@ -141,19 +146,27 @@ p {
 .ability {
   position: relative;
   display: block;
-  background: url(../img/trail.jpg) no-repeat;
+  background: url(../img/side-mnt.jpg) no-repeat;
   background-size: cover;
   background-attachment: fixed;
   padding: 50px 0; }
   @media (max-width: 767px) {
     .ability {
-      padding: 0; } }
+      padding: 40px 0; } }
+  @media (max-width: 420px) {
+    .ability {
+      background: url(../img/side-mnt-small.jpg) no-repeat;
+      background-size: cover; } }
   .ability .blur {
     width: 100%;
     padding: 20px 0;
-    background: url(../img/trail_blur.jpg) no-repeat;
+    background: url(../img/side-mnt_blur.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed; }
+    @media (max-width: 420px) {
+      .ability .blur {
+        background: url(../img/side-mnt-small_blur.jpg) no-repeat;
+        background-size: cover; } }
     .ability .blur .copy-holder {
       position: relative;
       z-index: 999;
@@ -162,7 +175,8 @@ p {
         padding-top: 0;
         margin: 0; }
       .ability .blur .copy-holder h3 {
-        text-align: center; }
+        text-align: center;
+        margin: 0 0 20px; }
       .ability .blur .copy-holder p {
         padding: 0 10px;
         margin-top: 0; }
@@ -170,13 +184,23 @@ p {
           .ability .blur .copy-holder p {
             width: 80%;
             margin: 0 auto; } }
+        @media (max-width: 420px) {
+          .ability .blur .copy-holder p {
+            width: 100%; } }
       .ability .blur .copy-holder i {
         font-size: 54px;
         text-align: center;
-        display: block; }
+        display: block;
+        margin: 20px 0 -10px; }
+        @media (max-width: 420px) {
+          .ability .blur .copy-holder i {
+            margin-top: 50px; } }
   .ability .icon-down {
     font-size: 24px;
     color: #fff !important; }
+  .ability .thanks {
+    background: #fff;
+    color: red; }
 
 .work {
   position: relative; }
@@ -295,10 +319,12 @@ footer {
   padding: 40px 0 10px;
   text-align: center;
   font-size: 20px;
-  font-family: bebas_neueregular,Arial,sans-serif; }
-  footer .icon-doc {
-    float: right;
-    padding: 0 20px; }
+  font-family: bebas_neueregular,Arial,sans-serif;
+  position: relative; }
+  footer a {
+    position: absolute;
+    bottom: 5px;
+    right: 5px; }
 
 @media (max-width: 420px) {
   .row {
